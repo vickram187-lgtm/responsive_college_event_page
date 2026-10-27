@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College TechFest 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --navy: #14213d;
+            --blue: #2563eb;
+            --light: #f3f6fb;
+            --text: #263247;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--navy);
+            color: white;
+            padding: 18px 7%;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: .5px;
+        }
+
+        nav {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #93c5fd;
+        }
+
+        .banner {
+            min-height: 390px;
+            padding: 70px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(59,130,246,.55), transparent 30%),
+                radial-gradient(circle at 85% 75%, rgba(124,58,237,.55), transparent 32%),
+                linear-gradient(135deg, #14213d, #1e3a8a);
+        }
+
+        .banner-content {
+            max-width: 760px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(255,255,255,.14);
+            border: 1px solid rgba(255,255,255,.35);
+            padding: 6px 14px;
+            border-radius: 30px;
+            margin-bottom: 18px;
+            font-size: .9rem;
+        }
+
+        .banner h1 {
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 18px;
+        }
+
+        .banner p {
+            font-size: 1.1rem;
+            margin-bottom: 28px;
+            color: #e5edff;
+        }
+
+        .button {
+            display: inline-block;
+            background: #fca311;
+            color: #14213d;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform .2s, background .2s;
+        }
+
+        .button:hover {
+            background: #ffba3a;
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 58px 7%;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-heading h2 {
+            color: var(--navy);
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .section-heading p {
+            color: #64748b;
+        }
+
+        .schedule {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: 20px;
+        }
+
+        .event-card {
+            flex: 1 1 240px;
+            max-width: 340px;
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 5px 18px rgba(20,33,61,.08);
+            border-top: 4px solid var(--blue);
+        }
+
+        .event-time {
+            color: var(--blue);
+            font-weight: 700;
+            font-size: .95rem;
+            margin-bottom: 10px;
+        }
+
+        .event-card h3 {
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .event-card p {
+            color: #64748b;
+        }
+
+        .registration {
+            background: #e0eaff;
+            text-align: center;
+        }
+
+        .registration h2 {
+            color: var(--navy);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .registration p {
+            margin: 0 auto 22px;
+            max-width: 600px;
+        }
+
+        footer {
+            text-align: center;
+            background: var(--navy);
+            color: #dbeafe;
+            padding: 20px;
+            font-size: .9rem;
+        }
+
+        /* Responsive styles for tablets and mobile phones */
+        @media (max-width: 768px) {
+            header {
+                padding: 16px 5%;
+            }
+
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 14px;
+            }
+
+            .banner {
+                min-height: 340px;
+                padding: 55px 5%;
+            }
+
+            section {
+                padding: 42px 5%;
+            }
+
+            .event-card {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.15rem;
+            }
+
+            nav {
+                gap: 10px 14px;
+                font-size: .9rem;
+            }
+
+            .banner {
+                min-height: 320px;
+                padding: 42px 5%;
+            }
+
+            .banner p {
+                font-size: 1rem;
+            }
+
+            .section-heading h2,
+            .registration h2 {
+                font-size: 1.65rem;
+            }
+
+            .button {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">JOY UNIVERSITY</div>
+            <nav aria-label="Main navigation">
+                <a href="#home">Home</a>
+                <a href="#schedule">Schedule</a>
+                <a href="#register">Register</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="banner" id="home">
+            <div class="banner-content">
+                <span class="tag">COLLEGE EVENT · 2026</span>
+                <h1>TECHFEST 2026</h1>
+                <p>Explore technology, share ideas, and build the future together. Join us for a day of innovation, creativity, and collaboration.</p>
+                <a class="button" href="#register">Register Now</a>
+            </div>
+        </section>
+
+        <section id="schedule">
+            <div class="section-heading">
+                <h2>Event Schedule</h2>
+                <p>A day packed with learning, creativity, and innovation.</p>
+            </div>
+
+            <div class="schedule">
+                <article class="event-card">
+                    <div class="event-time">09:00 AM – 10:00 AM</div>
+                    <h3>Opening Ceremony</h3>
+                    <p>Welcome address, event introduction, and an inspiring keynote session.</p>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-time">10:15 AM – 12:30 PM</div>
+                    <h3>Tech Workshops</h3>
+                    <p>Learn practical skills in web development, artificial intelligence, and emerging technology.</p>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-time">01:30 PM – 03:30 PM</div>
+                    <h3>Project Showcase</h3>
+                    <p>Discover student projects, exchange ideas, and meet fellow innovators.</p>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-time">03:45 PM – 04:30 PM</div>
+                    <h3>Prize Distribution</h3>
+                    <p>Celebrate creative solutions and conclude the event with awards and thanks.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="registration" id="register">
+            <h2>Be Part of the Experience!</h2>
+            <p>Register for TechFest 2026 and take the next step in your technology journey.</p>
+            <a class="button" href="mailto:events@example.com?subject=TechFest%202026%20Registration">Register by Email</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Joy University TechFest. Sample event webpage for Frontend Experiment 5.</p>
+    </footer>
+</body>
+</html>
